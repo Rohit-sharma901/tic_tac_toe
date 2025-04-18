@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0] - Game class implemented
+### Added
+- `Game` class with:
+  - Game flow control
+  - Player turn alternation
+  - Winner and draw check
+
 ## [0.3.0] - Player class implemented
 ### Added
 - `Player` class with:
