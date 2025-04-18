@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.5.0] - Main entry point implemented
+### Added
+- `main.py` to start the game
+- Game start logic (player names input)
+
 ## [0.4.0] - Game class implemented
 ### Added
 - `Game` class with:
