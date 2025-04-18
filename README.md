@@ -1,3 +1,6 @@
 # Tic Tac Toe (Python Console)
 
-This is a console-based Tic Tac Toe implementation using Python. This project follows Low-Level Design (LLD) principles with modular, testable components.
+A simple, test-driven implementation of the classic Tic Tac Toe game using Python.  
+Structured for clarity, maintainability, and scalability.
+
+---
