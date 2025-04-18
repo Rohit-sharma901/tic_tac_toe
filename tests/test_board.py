@@ -1,5 +1,6 @@
 import unittest
 from game.board import Board
+from game.exceptions import InvalidMoveError
 
 class TestBoard(unittest.TestCase):
     def setUp(self):
@@ -33,6 +34,15 @@ class TestBoard(unittest.TestCase):
         for row, col, symbol in moves:
             self.board.place_move(row, col, symbol)
         self.assertTrue(self.board.is_draw())
+
+    def test_invalid_move_exception(self):
+        self.board.place_move(0, 0, 'X')
+        with self.assertRaises(InvalidMoveError):
+            self.board.place_move(0, 0, 'O')
+
+    def test_out_of_bounds_move_raises_exception(self):
+        with self.assertRaises(InvalidMoveError):
+            self.board.place_move(3, 3, 'X')
 
 if __name__ == '__main__':
     unittest.main()

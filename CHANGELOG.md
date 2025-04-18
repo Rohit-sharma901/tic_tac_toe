@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.8.0] - Exception tests added
+### Added
+- Unit tests for:
+  - Invalid move on occupied cell raises `InvalidMoveError`
+  - Out-of-bounds move raises `InvalidMoveError`
+
 ## [0.7.0] - Exception handling added
 ### Added
 - `InvalidMoveError` and `GameOverError` custom exceptions
