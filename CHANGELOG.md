@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.6.0] - Basic board tests implemented
+### Added
+- Unit tests for board:
+  - Empty state
+  - Valid/invalid moves
+  - Win detection
+  - Draw detection
+
 ## [0.5.0] - Main entry point implemented
 ### Added
 - `main.py` to start the game
