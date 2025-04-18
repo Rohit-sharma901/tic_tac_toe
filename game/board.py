@@ -1,3 +1,5 @@
+from .exceptions import InvalidMoveError
+
 class Board:
     def __init__(self):
         self.size = 3
@@ -35,3 +37,9 @@ class Board:
 
     def is_draw(self):
         return all(self.grid[i][j] != ' ' for i in range(self.size) for j in range(self.size))
+
+    def place_move(self, row, col, symbol):
+        if self.is_valid_move(row, col):
+            self.grid[row][col] = symbol
+            return True
+        raise InvalidMoveError(f"Cell ({row}, {col}) is already occupied or out of bounds.")

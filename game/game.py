@@ -1,5 +1,7 @@
 from .board import Board
 from .player import Player
+from .exceptions import InvalidMoveError
+
 
 class Game:
     def __init__(self, player1_name, player2_name):
@@ -16,25 +18,21 @@ class Game:
             self.board.display()
             print(f"{self.current_player.name}'s turn ({self.current_player.symbol})")
 
-            # Get the current player's move
-            row, col = self.current_player.get_move()
-
-            # Check if the move is valid
-            if not self.board.place_move(row, col, self.current_player.symbol):
-                print("Invalid move, try again.")
+            try:
+                row, col = self.current_player.get_move()
+                self.board.place_move(row, col, self.current_player.symbol)
+            except InvalidMoveError as e:
+                print(e)
                 continue
 
-            # Check if there's a winner
             if self.board.check_winner(self.current_player.symbol):
                 self.board.display()
                 print(f"{self.current_player.name} wins!")
                 break
 
-            # Check if it's a draw
             if self.board.is_draw():
                 self.board.display()
                 print("It's a draw!")
                 break
 
-            # Switch to the other player
             self.switch_player()

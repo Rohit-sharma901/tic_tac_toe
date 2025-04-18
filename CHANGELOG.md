@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.7.0] - Exception handling added
+### Added
+- `InvalidMoveError` and `GameOverError` custom exceptions
+- Used `InvalidMoveError` in Board and handled in Game loop
+
 ## [0.6.0] - Basic board tests implemented
 ### Added
 - Unit tests for board:
